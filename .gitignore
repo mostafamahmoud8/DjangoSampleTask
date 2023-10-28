@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+#test coverage
+*.coverage
