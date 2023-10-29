@@ -2,13 +2,14 @@ from django.contrib.auth import get_user_model, password_validation
 from django.core import exceptions
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
+from serializers.CustomModelSerializer import ModelSerializer
 
 
 # write your serializers here
 
 User = get_user_model()
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(ModelSerializer):
     
     class Meta:
         model = User

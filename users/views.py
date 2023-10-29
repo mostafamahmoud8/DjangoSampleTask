@@ -23,9 +23,9 @@ class UserCreateApiView(views.APIView):
     @transaction.atomic()
     def post(self, request, *args, **kwargs):
         user_serializer = UserSerializer(data=request.data)
-        if user_serializer.is_valid():
-           user = user_serializer.save()
-           return self.get_tokens_for_user(user)
-        return response.Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        user_serializer.is_valid(raise_exception=True)
+        user = user_serializer.save()
+        return self.get_tokens_for_user(user)
+
 
 
