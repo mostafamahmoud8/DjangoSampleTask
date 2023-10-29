@@ -3,7 +3,7 @@ from .models import Transaction
 
 # write your filters here
 
-class CardTemplateFilter(FilterSet):
+class TransactionFilter(FilterSet):
 
     date = rest_framework.DateTimeFromToRangeFilter(field_name='created_at')
     currency = rest_framework.CharFilter(field_name='from_currency', method='filter_currency')

@@ -15,6 +15,8 @@ class Transaction(models.Model):
     amount = models.FloatField(_('transaction amount'), null=False, blank=False)
     from_currency = models.CharField(_('from currency'), max_length=10, null=False, blank=False)
     to_currency = models.CharField(_('to currency'), max_length=10, null=False, blank=False)
+    exhange_rate = models.FloatField(_('currency exchange rate'), null=False, blank=False)
+    result = models.FloatField(_('transaction result'), null=False, blank=False)
     status = models.CharField(_('transaction status'), max_length=10, choices=TRANSACTIONSTATUS.choices, default=TRANSACTIONSTATUS.TEMPORARY)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
