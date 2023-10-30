@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="transaction",
             name="exhange_rate",
-            field=models.FloatField( blank=True, null=True, verbose_name="currency exchange rate"),
+            field=models.FloatField(blank=True, null=True, verbose_name="currency exchange rate"),
         ),
     ]
