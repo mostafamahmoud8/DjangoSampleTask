@@ -23,3 +23,14 @@ class Transaction(models.Model):
 
     def __str__(self) -> str:
         return self.user.get_username()
+
+class ExchangeRate(models.Model):
+    
+    from_currency = models.CharField(_('from currency'), max_length=10, null=False, blank=False)
+    to_currency = models.CharField(_('to currency'), max_length=10, null=False, blank=False)
+    rate = models.FloatField(_('currency exchange rate'), null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.from_currency+" "+ self.to_currency
