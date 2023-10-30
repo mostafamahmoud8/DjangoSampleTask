@@ -17,7 +17,7 @@ user currency echange rate
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/mostafamahmoud8/DjangoSampleTask.git
 ```
 
 Go to the project directory
