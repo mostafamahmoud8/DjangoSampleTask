@@ -1,4 +1,3 @@
-from django.db import transaction
 from rest_framework import views, status, response
 from .serializers import UserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -20,7 +19,6 @@ class UserCreateApiView(views.APIView):
             'access': str(refresh.access_token),
         }, status=status.HTTP_201_CREATED)
     
-    @transaction.atomic()
     def post(self, request, *args, **kwargs):
         user_serializer = UserSerializer(data=request.data)
         user_serializer.is_valid(raise_exception=True)

@@ -28,6 +28,6 @@ class TransactionSerializer(ModelSerializer):
                 transaction.rate = exchange_rate.rate
                 transaction.result = validated_data.get('amount') * transaction.exhange_rate
             except ExchangeRate.DoesNotExist:
-                raise serializers.ValidationError({"error":"error happend during transaction", "detail":data})
+                raise serializers.ValidationError({"error":"error happend during transaction"})
         transaction.save()
         return transaction

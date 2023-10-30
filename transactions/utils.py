@@ -1,5 +1,6 @@
 import currencyapicom
 import logging
+import os
 import threading
 from .models import ExchangeRate 
 
@@ -15,12 +16,20 @@ def write_data_to_db(base_currency, data):
             ExchangeRate.objects.create(from_currency=base_currency, to_currency=value['code'], rate=value['value'])
     
 def get_change_rate(base_currency):
-    try:
-        client = currencyapicom.Client(API_KEY)
-        data = client.latest(base_currency=base_currency)['data']
-        thread = threading.Thread(target=write_data_to_db, args=(base_currency, data,))
-        thread.start()
-        return data
-    except Exception as e:
-        logger.error(repr(e))
-        return None
+    if os.environ.get('TEST', None) == "False":
+        try:
+            client = currencyapicom.Client(API_KEY)
+            data = client.latest(base_currency=base_currency)['data']
+            thread = threading.Thread(target=write_data_to_db, args=(base_currency, data,))
+            thread.start()
+            return data
+        except Exception as e:
+            logger.error(repr(e))
+            return None
+    else:
+        return {
+        "AED": {
+            "code": "AED",
+            "value": 3.67306
+        }
+        }
