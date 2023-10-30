@@ -63,5 +63,15 @@ start server
   python manage.py runserver
 ```
 
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  python manage.py test
+```
 
 
+## External exchange api
+
+[Currency Api](https://currencyapi.com/)
