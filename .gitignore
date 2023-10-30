@@ -13,3 +13,6 @@ staticfiles/
 
 #test coverage
 *.coverage
+
+#celery beat
+*celerybeat
