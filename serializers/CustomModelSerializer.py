@@ -12,3 +12,4 @@ class ModelSerializer(serializers.ModelSerializer):
             for item in e.args:
                 errors.update(**item)
             raise exceptions.ValidationError({"detail":errors})
+        
