@@ -47,14 +47,14 @@ Now open another and write the following
 to fire up a celery worker
 
 ```bash
-  celery -A did_django_schedule_jobs_v2.celery worker --pool=solo -l info
+  celery -A DjangoSampleTask.celery worker --pool=solo -l info
  
 ```
 
 to fire up a celery beat worker
 
 ```bash
-  celery -A didcoding.celery beat -l INFO
+  celery -A DjangoSampleTask.celery beat -l INFO
 ```
 
 start server
