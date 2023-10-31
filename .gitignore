@@ -15,4 +15,4 @@ staticfiles/
 *.coverage
 
 #celery beat
-celery*
+celerybeat*
