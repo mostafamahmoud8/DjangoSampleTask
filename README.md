@@ -1,7 +1,7 @@
 
 # Django Transaction Task Api
 
-user currency echange rate
+user currency exchange rate
 
 
 
@@ -9,7 +9,7 @@ user currency echange rate
 
 [Postman Documentation](https://documenter.getpostman.com/view/19588926/2s9YXb8Qw9)
 
-[Swaager Documentation](http://localhost:8000/api/v1/swagger/schema)
+[Swagger Documentation](http://localhost:8000/api/v1/swagger/schema)
 
 
 ## Run Locally
